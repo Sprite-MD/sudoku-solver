@@ -27,3 +27,6 @@ def isValid(board):
         for row_value in range(9):
             if board == row_value:
                 return False
+
+    # Check Sub-grids
+    
