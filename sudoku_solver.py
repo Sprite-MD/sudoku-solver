@@ -19,3 +19,11 @@ def isValid(board):
     for row in range(9):
         for column_value in range(9):
             if board == column_value:
+                return False
+
+    # Check Column
+
+    for column in range(9):
+        for row_value in range(9):
+            if board == row_value:
+                return False
