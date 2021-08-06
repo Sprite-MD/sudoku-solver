@@ -1,4 +1,10 @@
+'''
+1. Create check if num is valid at current slot after assignment
+2. Create recursive function that inputs board
+3. Check board for any unassigned slots. If true, cycle through 1-9 to check if any nums are valid
+4. If all slots have been assigned and conform to rules, then return True
 
+'''
 
 
 board = [
@@ -13,20 +19,48 @@ board = [
     [0,4,9,2,0,6,0,0,7]
 ]
 
-def isValid(board):
+def isValid(board, row, column, num):
 
     # Check Row
-    for row in range(9):
-        for column_value in range(9):
-            if board == column_value:
-                return False
+    for i in range(9):
+        if board[row][i] == num:
+            return False
 
     # Check Column
-
-    for column in range(9):
-        for row_value in range(9):
-            if board == row_value:
-                return False
-
-    # Check Sub-grids
+    for i in range(9):
+        if board[i][column] == num:
+            return False
     
+    # Check Sub-grids
+    for i in range(3):
+        for j in range(3):
+            pass
+
+def empty_slot(board):
+    for i in range(9):
+        for j in range(9):
+            if board[i][j] == 0:
+                return True
+    return False
+
+def solve(board):
+    row = 0
+    column = 0
+
+    # Base Case
+    if not empty_slot(board):
+        return True
+
+    for num in range(1,10):
+        
+        
+        
+        if solve(board): return True # Number works
+        
+        board[row][column] == 0 # resets the slot to 0 if ^ did not work
+
+
+
+
+
+    return False    # Should trigger backtracking
