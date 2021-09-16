@@ -5,11 +5,6 @@
    if not, reset spot and go back to previous index
 4. Once board is full, puzzle is complete
 
-
-To-do: 
-complete isValid function: subsections
-create visuals to show board being solved
-double check to make sure solve method is correct (can't do till isValid is finished)
 '''
 
 
